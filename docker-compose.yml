@@ -1,0 +1,12 @@
+services:
+  web:
+    image: beeman/static-server:latest
+    volumes:
+      - ./dist:/workspace/app:ro
+    environment:
+      - SPA=true
+    networks:
+      - dokploy-network
+networks:
+  dokploy-network:
+    external: true
